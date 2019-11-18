@@ -11,13 +11,13 @@ public class StreamSort {
         while (i<10){
             i++;
             Worker worker = new Worker();
-            worker.setName(UUID.randomUUID().toString().substring(16));
+            worker.setName(UUID.randomUUID().toString().substring(32));
             worker.setId(25 + new Random().nextInt(10));
             workers.add(worker);
         }
 
         Collections.sort(workers,Comparator.comparingInt(Worker::getId));
         Collections.reverse(workers);
-        workers.stream().forEach(p->System.out.println(p.getId()));
+        workers.stream().forEach(p->System.out.println(p.getId() + " - " + p.getName()));
     }
 }
