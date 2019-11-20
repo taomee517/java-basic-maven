@@ -236,4 +236,19 @@ public class ApacheStringUtil {
         String a = StringUtils.join(array, "-");
         System.out.println(a);
     }
+
+    @Test
+    public void subStringBetweenTest(){
+        //截取101与|之间的值
+        String loginMsg = "*7c|a3|106,201|101,963070011618433|102,460079241205511|104,otu.ost,01022300|105,a1,18|622,a1c2|";
+        String imei = StringUtils.substringBetween(loginMsg,"|101,", "|");
+        System.out.println(imei);
+    }
+
+    @Test
+    public void centerTest(){
+        String title = "Menu";
+        String decoratedTitle = StringUtils.center(title,24, "*");
+        System.out.println(decoratedTitle);
+    }
 }
