@@ -1,4 +1,4 @@
-package com.basic.java.juc.volatiledemo;
+package com.basic.java.juc.volatilej;
 
 /**
  * volatile关键字案例
@@ -29,7 +29,8 @@ public class VolatileDemo {
 }
 
 class Task implements Runnable{
-    public volatile boolean flag = false;
+    /**如果不加volatile修饰，main方法无法修改成功*/
+    private volatile boolean FLAG = false;
 
     @Override
     public void run() {
@@ -38,14 +39,14 @@ class Task implements Runnable{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        flag = true;
+        FLAG = true;
     }
 
     public boolean isFlag() {
-        return flag;
+        return FLAG;
     }
 
     public void setFlag(boolean flag) {
-        this.flag = flag;
+        this.FLAG = flag;
     }
 }

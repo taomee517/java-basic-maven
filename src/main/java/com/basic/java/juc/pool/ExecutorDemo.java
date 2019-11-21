@@ -1,5 +1,6 @@
 package com.basic.java.juc.pool;
 
+import java.util.Map;
 import java.util.concurrent.*;
 
 /**
@@ -10,10 +11,10 @@ import java.util.concurrent.*;
  */
 public class ExecutorDemo {
     public static void main(String[] args) throws Exception {
-//        Map<String,String> env = System.getenv();;
-//        for(String key:env.keySet()){
-//            System.out.println(key + "\t===\t" + env.get(key));
-//        }
+        Map<String,String> env = System.getenv();;
+        for(String key:env.keySet()){
+            System.out.println(key + "\t===\t" + env.get(key));
+        }
         int availableProcessors = Runtime.getRuntime().availableProcessors();
         System.out.println("电脑可用处理器数目：" + availableProcessors);
         LinkedBlockingQueue<Runnable> taskQueue = new LinkedBlockingQueue<Runnable>(1024);
