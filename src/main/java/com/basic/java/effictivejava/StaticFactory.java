@@ -1,7 +1,6 @@
 package com.basic.java.effictivejava;
 
-import com.basic.java.effictivejava.pojo.HungryModel;
-import com.basic.java.effictivejava.pojo.LazyModel;
+import com.basic.java.effictivejava.pojo.*;
 
 public class StaticFactory {
     /**
@@ -19,5 +18,18 @@ public class StaticFactory {
         HungryModel hungryModel = HungryModel.getInstance();
         lazyModel.intro();
         hungryModel.intro();
+
+        BuilderModel builderModel = BuilderModel.builder()
+                .age(5)
+                .name("Nick")
+                .build();
+        builderModel.intro();
+
+        Animal dog = Animal.creat(AnimalEnum.DOG);
+        dog.intro();
+
+        //Animal采用的是单例模式，cat未被实例化，cat也是dog
+        Animal cat = Animal.creat(AnimalEnum.CAT);
+        cat.intro();
     }
 }
