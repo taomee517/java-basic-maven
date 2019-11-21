@@ -1,4 +1,4 @@
-package com.basic.java.multithread.latch;
+package com.basic.java.juc.latch;
 
 import com.basic.java.util.ThreadPoolUtil;
 
