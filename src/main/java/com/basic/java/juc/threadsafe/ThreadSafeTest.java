@@ -15,9 +15,10 @@ public class ThreadSafeTest {
     public static void main(String[] args) {
         ExecutorService pool = ThreadPoolUtil.pool;
         Runnable depositTask = new BankAccountThreadSafeConfirmTask(account);
-        //目前的写法并不安全 todo
+
         for(int i=0;i<THREAD_LIMIT;i++){
             pool.submit(depositTask);
         }
+        pool.shutdown();
     }
 }

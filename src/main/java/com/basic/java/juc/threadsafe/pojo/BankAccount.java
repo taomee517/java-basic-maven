@@ -13,7 +13,7 @@ public class BankAccount {
 
     public synchronized void deposit(float amt) {
         amount += amt;
-        log.info("线程：{}存入1元,账户总金额现为：{}",Thread.currentThread().getName(),amount);
+        log.info("存入1元后,账户总金额为：{}",amount);
     }
     public void withdraw(float amt) {
         amount -= amt;
