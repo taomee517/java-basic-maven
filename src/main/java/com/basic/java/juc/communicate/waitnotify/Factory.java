@@ -23,7 +23,6 @@ public class Factory extends Thread{
 						house.wait();
 					}
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}		
 			}					
