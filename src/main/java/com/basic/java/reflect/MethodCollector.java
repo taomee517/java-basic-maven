@@ -90,24 +90,24 @@ public class MethodCollector {
 
     //从JavaDoc获取所有方法对象，包含方法名及方法注解中文名 TODO
     public static List<MethodEntity> getAllMethodFromJavaDoc(){
-        List<MethodEntity> methodEntities = null;
-        Class<?> clazz = CmdApi.class;
-        Method[] methods = clazz.getDeclaredMethods();
-        if(methods.length>0){
-            methodEntities = new ArrayList<>(methods.length);
-            MethodEntity methodEntity = null;
-            for(Method m:methods){
-                Annotation anno = m.getAnnotation(MethodSign.class);
-                if (!Objects.isNull(anno)) {
-                    methodEntity = new MethodEntity();
-                    String methodSign = ((MethodSign) anno).name();
-                    methodEntity.setMethodSign(methodSign);
-                    methodEntity.setMethodName(m.getName());
-                    methodEntities.add(methodEntity);
-                }
-            }
-            return methodEntities;
-        }
+//        List<MethodEntity> methodEntities = null;
+//        Class<?> clazz = CmdApi.class;
+//        Method[] methods = clazz.getDeclaredMethods();
+//        if(methods.length>0){
+//            methodEntities = new ArrayList<>(methods.length);
+//            MethodEntity methodEntity = null;
+//            for(Method m:methods){
+//                Annotation anno = m.getAnnotation(MethodSign.class);
+//                if (!Objects.isNull(anno)) {
+//                    methodEntity = new MethodEntity();
+//                    String methodSign = ((MethodSign) anno).name();
+//                    methodEntity.setMethodSign(methodSign);
+//                    methodEntity.setMethodName(m.getName());
+//                    methodEntities.add(methodEntity);
+//                }
+//            }
+//            return methodEntities;
+//        }
         return Collections.EMPTY_LIST;
     }
 

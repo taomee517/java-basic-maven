@@ -26,8 +26,8 @@ public class FzkGenerator {
     private final static String username = "root";
     private final static String password = "fastgo123";
     private final static String drive = "com.mysql.jdbc.Driver";
-    private final static String TABLE_NAME = "tb_dictionary";
-    private final static String TABLE_COMMENT = "字典表";
+    private final static String TABLE_NAME = "tb_weizhang";
+    private final static String TABLE_COMMENT = "违章记录";
     private final static String FILE_PATH = "E:\\generator";
 
     public static void main(String[] args){
