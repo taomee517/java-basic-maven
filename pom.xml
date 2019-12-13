@@ -16,7 +16,7 @@
         <rabbitmq-version>5.6.0</rabbitmq-version>
         <fastjson-version>1.2.62</fastjson-version>
         <jedis-version>3.1.0</jedis-version>
-        <netty-version>4.1.32.Final</netty-version>
+        <netty-version>4.1.42.Final</netty-version>
         <generex-version>1.0.2</generex-version>
         <common-lang3-version>3.9</common-lang3-version>
         <commons-io-version>2.6</commons-io-version>
