@@ -20,11 +20,11 @@ public class PublishTask implements Runnable, TimerTask {
 
     @Override
     public void run() {
-        try {
-            Thread.sleep(51);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(51);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         log.info("任务发布成功, imei = {}", imei);
         latch.countDown();
     }

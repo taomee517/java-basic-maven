@@ -13,11 +13,12 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class HashedWheelTest {
     public static void main(String[] args) throws Exception{
-        int concurretSize = 1000;
+        int concurretSize = 10;
+        //创建Timer, 精度为100毫秒,开始计时
+        HashedWheelTimer timer = new HashedWheelTimer(1000, TimeUnit.MILLISECONDS);
         long start = System.currentTimeMillis();
+        log.info("开始计时,start = {}",start);
         CountDownLatch latch = new CountDownLatch(concurretSize);
-        //创建Timer, 精度为100毫秒,
-        HashedWheelTimer timer = new HashedWheelTimer(100, TimeUnit.MILLISECONDS);
         for (int i=0; i<concurretSize; i++) {
             PublishTask task = new PublishTask("IMEI8" + ZeroFillStrUtil.zeroFillStr(i,4),latch);
             timer.newTimeout(task,1000,TimeUnit.MILLISECONDS);
