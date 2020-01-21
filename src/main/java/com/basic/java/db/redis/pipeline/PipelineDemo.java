@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class PipelineDemo {
+    private static volatile long main_end = 0;
+
     public static void main(String[] args) {
         String testKey = "DelayMessageQueue:865886034429940";
         Jedis jedis = JedisBuilder.instance().getJedis();
@@ -34,11 +36,14 @@ public class PipelineDemo {
                 Object result = future.get();
                 if(Objects.nonNull(result)){
                     List<String> msgs = ((List<String>) result);
-                    System.out.println("收到结果：time = " + System.currentTimeMillis() + ", size = " + msgs.size());
+                    long now = System.currentTimeMillis();
+                    long offset = now - main_end;
+                    System.out.println("收到结果：time = " + now + ", size = " + msgs.size() + ", offset = " + offset);
                     mp.close();
                 }
             }
         });
-        System.out.println("主线程执行结束！ end = " + System.currentTimeMillis());
+        main_end = System.currentTimeMillis();
+        System.out.println("主线程执行结束！ end = " + main_end);
     }
 }
