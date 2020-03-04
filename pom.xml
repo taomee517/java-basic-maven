@@ -23,6 +23,7 @@
         <velocity-version>1.7</velocity-version>
         <commons-configuration-version>1.10</commons-configuration-version>
         <mysql-connector-version>5.1.48</mysql-connector-version>
+        <kafka-version>2.3.0</kafka-version>
         <tools.jar>${env.JAVA_HOME}/lib/tools.jar</tools.jar>
     </properties>
 
@@ -101,6 +102,13 @@
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>${netty-version}</version>
+        </dependency>
+
+        <!-- kafka -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.12</artifactId>
+            <version>${kafka-version}</version>
         </dependency>
         <!-- lombok -->
         <dependency>
