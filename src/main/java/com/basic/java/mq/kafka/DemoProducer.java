@@ -1,5 +1,6 @@
 package com.basic.java.mq.kafka;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -8,6 +9,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Properties;
 
+@Slf4j
 public class DemoProducer {
     public static final String BOOTSTRAP_SERVER = "127.0.0.1:9092";
     public static final String TOPIC = "demo";
@@ -26,5 +28,6 @@ public class DemoProducer {
         String message = "hello,kafka!";
         ProducerRecord record = new ProducerRecord(TOPIC, message);
         producer.send(record);
+        log.info("消息发送成功！ topic = {}, msg = {}", TOPIC, message);
     }
 }

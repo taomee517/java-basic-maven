@@ -43,6 +43,7 @@
         <Logger name="org.springframework" level="WARN" />
         <Logger name="com.demo" level="INFO" />
         <Logger name="io.netty" level="INFO" />
+        <Logger name="org.apache" level="WARN" />
         <Root level="DEBUG">
             <AppenderRef ref="console"></AppenderRef>
             <AppenderRef ref="error"></AppenderRef>
