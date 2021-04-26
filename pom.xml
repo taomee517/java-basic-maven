@@ -19,7 +19,7 @@
         <netty-version>4.1.32.Final</netty-version>
         <generex-version>1.0.2</generex-version>
         <common-lang3-version>3.9</common-lang3-version>
-        <commons-io-version>2.6</commons-io-version>
+        <commons-io-version>2.7</commons-io-version>
         <velocity-version>1.7</velocity-version>
         <commons-configuration-version>1.10</commons-configuration-version>
         <mysql-connector-version>5.1.48</mysql-connector-version>
